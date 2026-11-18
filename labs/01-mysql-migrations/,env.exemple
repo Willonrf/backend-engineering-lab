@@ -1,0 +1,6 @@
+DB_HOST=mysql
+DB_PORT=3306
+DB_USER=lab_user
+DB_PASS=lab_pass
+DB_NAME=migrations_lab
+AUTO_RUN_MIGRATIONS=true

@@ -1,0 +1,39 @@
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: lab01_mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_DATABASE: ${DB_NAME:-migrations_lab}
+      MYSQL_USER: ${DB_USER:-lab_user}
+      MYSQL_PASSWORD: ${DB_PASS:-lab_pass}
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysql_lab01_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-proot_password"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: lab01_nestjs_api
+    depends_on:
+      mysql:
+        condition: service_healthy
+    environment:
+      DB_HOST: mysql
+      DB_PORT: 3306
+      DB_USER: ${DB_USER:-lab_user}
+      DB_PASS: ${DB_PASS:-lab_pass}
+      DB_NAME: ${DB_NAME:-migrations_lab}
+    ports:
+      - "3000:3000"
+
+volumes:
+  mysql_lab01_data:

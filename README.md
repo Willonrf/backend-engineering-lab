@@ -8,9 +8,9 @@ Cada diretório em `/labs` representa um estudo de caso autocontido com ambiente
 
 ## Roadmap & Módulos Implementados
 
-| #   | Módulo                                                   | Stack Principal                            | Conceitos-Chave                                                                                    | Status       |
-| :-- | :------------------------------------------------------- | :----------------------------------------- | :------------------------------------------------------------------------------------------------- | :----------- |
-| 01  | [Database & Data Migrations](./labs/01-mysql-migrations) | NestJS, TypeScript, TypeORM, MySQL, Docker | Schema vs Data Migration, Expand & Contract, Implicit Commit (DDL), Rollback & E2E Integrity Tests | Em andamento |
+| #   | Módulo                                                   | Stack Principal                                    | Conceitos-Chave                                                                                    | Status    |
+| :-- | :------------------------------------------------------- | :------------------------------------------------- | :------------------------------------------------------------------------------------------------- | :-------- |
+| 01  | [Database & Data Migrations](./labs/01-mysql-migrations) | NestJS, TypeScript, TypeORM, MySQL, Vitest, Docker | Schema vs Data Migration, Expand & Contract, Implicit Commit (DDL), Rollback & E2E Integrity Tests | Concluído |
 
 ---
 
@@ -28,7 +28,7 @@ Todo laboratório dentro de `labs/` segue a mesma estrutura para facilitar a ava
 
 ```bash
 # 1. Clone o repositório
-git clone [https://github.com/SEU-USUARIO/backend-engineering-lab.git](https://github.com/SEU-USUARIO/backend-engineering-lab.git)
+git clone [https://github.com/Willonrf/backend-engineering-lab.git](https://github.com/Willonrf/backend-engineering-lab.git)
 
 # 2. Acesse o laboratório desejado
 cd backend-engineering-lab/labs/01-mysql-migrations
